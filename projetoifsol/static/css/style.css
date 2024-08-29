@@ -1,0 +1,400 @@
+/* Slider */
+.container-fluid{
+padding: 0%;
+}
+
+#Slider .carousel-inner, #Slider .carousel-item{
+height: 80vh;
+}
+
+.carousel-indicators .active{
+background-color: #3b5c2c;
+}
+
+#parceiros {
+    /* background: #ced4da; */
+    color: rgb(12, 12, 12);
+    border-top: 5px solid rgba(11, 11, 12, 0.1);
+    padding-top: 30px;
+    border-bottom: 5px solid rgba(12, 12, 12, 0.1);
+    padding-bottom: 100px;
+}
+
+/* Footer */
+
+#contato {
+    text-align: center;
+}
+
+.contact-box {
+    padding-bottom: 20px;
+    padding-top: 35px;
+    margin-bottom: 30px;
+}
+
+.contact-box i {
+    color: #121213;
+    border: solid 1px #f9f9f9;
+    border-radius: 40%;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact-box p {
+    font-size: 16px;
+    color: #d6caca;
+}
+
+.contact-tit {
+    font-weight: bold;
+    color: #141414;
+
+}
+
+#contato {
+    background-color:  #7fa36e;
+}
+
+#contato h3 {
+    padding-top: 30px;
+}
+
+
+#rodape .container {
+    padding: 5px 0;
+    text-align: center;
+}
+
+#formlogin {
+    border-radius: 12px;
+}
+
+#formcadastro {
+    border-radius: 12px;
+}
+
+#divCadastro, #formlogin h2 {
+    margin-top: 25px;
+    text-align: center;
+}
+
+p.truncate-3l {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+p.inforcard {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+h5.titulocard {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+small.limitadorDeLinha {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.bg-layout {
+    background-color: #70a05a;
+
+}
+
+
+.page1-section {
+    background-color: #f0f3f3;
+
+}
+
+.container-fluid1 {
+    background-color: #e6f0f0;
+}
+
+.card-tit {
+    background-color: #02090f;
+}
+
+.btn1-warning {
+    color: #368171;
+    background-color: #80c2bc;
+    border-color: #2895b1;
+
+}
+
+.bg-light2 {
+    background-color:#e9ecef ;
+}
+
+.container2 {
+    background-color: #e9ecef;
+}
+
+.messages {
+    list-style: none;
+    padding: 0;
+}
+
+.messages li {
+    padding: 10px;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.container4 {
+background-color: #f0f0f0; /* Cor de fundo do rodapé */
+color: #333; /* Cor do texto */
+padding: 30px;
+}
+
+.social-icons a {
+color: #333; /* Cor dos ícones das redes sociais */
+}
+
+.social-icons a:hover {
+color: #007bff; /* Cor dos ícones ao passar o mouse */
+}
+
+.table-primary1 {
+    background-color: #70a05a; /* verde claro */
+    color: #121213(113, 122, 119);
+}
+
+.table-light {
+    background-color: #9a9e98; /* cinza claro */
+}
+
+.table-hover tbody tr:hover {
+    background-color: #9a9e98; /* Cinza claro */
+}
+
+
+/* Estilo para a tabela */
+table.table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #f8f9fa;
+}
+
+/* Estilo para o cabeçalho completo (toda a linha superior) */
+.thead{
+    background-color: #70a05a; /* Cor verde clara */
+    border: 1px solid #000000; /* Borda preta */
+    color: black;
+    text-align: left;
+}
+
+/* Estilo para as células */
+table.table th, table.table th {
+    padding: 8px;
+}
+
+/* Cor alternada nas linhas */
+.table{
+    background-color: #e9ecef;
+}
+
+.table{
+    background-color: #ffffff;
+}
+
+/* Estilo da imagem em miniatura */
+table.table .img-thumbnail {
+    width: 100px;
+    height: auto;
+}
+
+/* Estilo do botão */
+.btn-success1 {
+    background-color: #5f925f;
+    border-color: #3a8d4c;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+
+.logo-centered {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.form-cadastro {
+    background-color: #f8f9fa; /* Fundo claro */
+    border-color: #28a745; /* Cor da borda verde */
+}
+
+.form-cadastro h2 {
+    color: #28a745; /* Verde suave no título */
+}
+
+.form-control {
+    border-color: #28a745; /* Borda verde nos campos */
+    background-color: #e9f7ef; /* Fundo leve e esverdeado nos campos */
+}
+
+.btn-success1 {
+    background-color: #3e8d50;
+    border-color: #92c49d;
+    color: white;
+}
+
+.btn-success1:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+
+  /* CSS Interno */
+  .thead-custom {
+    background-color: #5f925f; /* Verde claro */
+    color: white; /* Verde escuro para o texto */
+}
+
+.thead-custom th {
+    font-weight: bold;
+}
+
+.text-dark {
+    color: #000; /* Preto para o título do histórico de pedidos */
+}
+
+
+
+/* Geral */
+body {
+    background-color: #f0f2f5; /* Cinza claro */
+}
+
+/* Container principal */
+.container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Formulário */
+.bg-light {
+    background-color: #ffffff; /* Branco */
+}
+
+/* Títulos */
+h2 {
+    color: #3a3a3a; /* Cinza escuro */
+}
+
+/* Formulário e Tabelas */
+.form-control, .table {
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0 rgba(0,0,0,.125);
+}
+
+/* Botão de Cadastro e Adição */
+.btn-success {
+    background-color: #5f925f; /* Verde */
+    border-color: #5f925f; /* Verde */
+}
+
+.btn-success:hover {
+    background-color: #218838; /* Verde escuro */
+    border-color: #1e7e34; /* Verde escuro */
+}
+
+/* Tabelas */
+.table {
+    background-color: #ffffff; /* Branco */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f8f9fa; /* Cinza claro */
+}
+
+.table thead {
+    background-color: #343a40; /* Cinza escuro */
+    color: #ffffff; /* Branco */
+}
+
+/* Botões de Ação */
+.btn-warning {
+    background-color: #ffc107; /* Amarelo */
+    border-color: #ffc107; /* Amarelo */
+}
+
+.btn-warning:hover {
+    background-color: #e0a800; /* Amarelo escuro */
+    border-color: #d39e00; /* Amarelo escuro */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Vermelho */
+    border-color: #dc3545; /* Vermelho */
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Vermelho escuro */
+    border-color: #bd2130; /* Vermelho escuro */
+}
+
+/* Alertas */
+.alert-danger {
+    background-color: #f8d7da; /* Rosa claro */
+    color: #721c24; /* Vermelho escuro */
+}
+
+.alert-success {
+    background-color: #d4edda; /* Verde claro */
+    color: #155724; /* Verde escuro */
+}
+
+/* Margens e Padding */
+.mt-3, .mt-4, .mt-5 {
+    margin-top: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.p-4, .p-md-5 {
+    padding: 1.5rem;
+}
+
+
+/* custom-styles.css */
+
+/* Estilo para a lista de ícones */
+.custom-icons-list {
+    display: flex;
+    justify-content: center; /* Alinha os itens no centro horizontalmente */
+    gap: 20px; /* Espaço entre os itens */
+}
+
+.custom-icon-item {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o ícone e o texto */
+}
+
