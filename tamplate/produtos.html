@@ -1,0 +1,113 @@
+{% extends 'layout.html' %}  
+{% load static %}
+{% block conteudo %}
+
+<body>
+    <main>
+        <div class="container2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-5">
+                        <form class="justify-content-center justify-content-md-start mb-3 mb-md-0 mt-4" method="get" action="">
+                            <div class="input-group input-group-sm">
+                                <input type="text" name="busca_de_produtos" class="form-control" placeholder="Digite aqui o que procura">
+                                <input type="submit" style="margin-left: 10px;" class="btn btn-success" value="Buscar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <hr class="mt-3">
+
+                {% if listagem_de_produtos %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead class="thead">
+                                    <tr>
+                                        <th>Imagem</th>
+                                        <th>Nome</th>
+                                        <th>Preço</th>
+                                        <th>Unidade</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for produto in listagem_de_produtos %}
+                                    <tr>
+                                        <td>
+                                            {% if produto.imagem %}
+                                                <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" class="img-thumbnail">
+                                            {% else %}
+                                                <img src="{% static 'img/sem_foto.jpg' %}" alt="Sem foto" class="img-thumbnail">
+                                            {% endif %}
+                                        </td>
+                                        <td>{{ produto.nome }}</td>
+                                        <td>R$ {{ produto.preco }}</td>
+                                        <td>{{ produto.unidade_de_medida }}</td>
+                                        <td>
+                                            {% if user.is_authenticated %}
+                                            <!-- Botão Adicionar ao Carrinho -->
+                                            <a href="{% url 'adicionar_carrinho' produto.id %}" class="btn btn-success">Adicionar</a>
+                                        
+                                            <!-- Botão Detalhar -->
+                                            <a href="{% url 'detalhes_produto' produto.id %}" class="btn btn-info">Detalhar</a>
+                                        
+                                            <!-- Botão Excluir -->
+                                            <a href="{% url 'confirmar_exclusao' produto.id %}" class="btn btn-danger">Excluir</a>
+                                        {% else %}
+                                            <!-- Botão Adicionar ao Carrinho (Desativado) -->
+                                            <button class="btn btn-secondary" disabled>
+                                                <small><i class="fa-solid fa-lock"></i></small>
+                                            </button>
+                                        {% endif %}
+                                        
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                <hr class="mt-3">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ajaxLinks = document.querySelectorAll('.ajax-link');
+       
+            ajaxLinks.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+       
+                    const url = this.getAttribute('href');
+                    console.log(url);
+       
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('GET', url, true);
+       
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === XMLHttpRequest.DONE) {
+                            if (xhr.status === 200) {
+                                console.log(xhr.responseText);
+                                // Atualize a página ou exiba uma mensagem de sucesso, se necessário
+                                location.reload();  // Atualiza a página para refletir a exclusão
+                            } else {
+                                console.error('Erro na requisição:', xhr.status);
+                            }
+                        }
+                    };
+       
+                    xhr.send();
+                });
+            });
+        });
+    </script>
+
+{% endblock conteudo %}
+
