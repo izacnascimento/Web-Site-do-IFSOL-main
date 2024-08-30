@@ -2,14 +2,14 @@
 {% block conteudo %}
 <main>
     <div class="container">
-        <h1 class="text-center mt-4">Confirmar Exclusão</h1>
+        <h1 class="text-center mt-4">Confirmar Exclusão do Item</h1>
         <div class="alert alert-warning mt-4" role="alert">
-            Você tem certeza que deseja excluir o produto "{{ produto.nome }}"?
+            Você tem certeza que deseja excluir o item "{{ item.produto.nome }}" do carrinho?
         </div>
         <form method="post">
             {% csrf_token %}
             <button type="submit" class="btn btn-danger">Excluir</button>
-            <a class="btn btn-secondary" href="{% url 'produtos' %}">Cancelar</a>
+            <a class="btn btn-secondary" href="{% url 'carrinho' %}">Cancelar</a>
         </form>
     </div>
 </main>

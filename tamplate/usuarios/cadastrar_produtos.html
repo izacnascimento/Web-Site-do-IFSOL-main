@@ -3,11 +3,11 @@
 {% block conteudo %}
 
 <body>
-    <div class="container mt-5 mb-4">
+    <div class="container mt-5 mb-4 d-flex justify-content-center">
         <div class="row">
             <!-- Formulário para cadastrar um novo produto -->
-            <div class="col-md-6">
-                <section id="cadastrar-produto" class="bg-light p-4 border rounded-3 shadow-sm">
+            <div class="col-md-12">
+                <section id="produto-form" class="bg-light p-4 border rounded-3 shadow-sm">
                     <h2 class="text-center mb-4">Cadastrar Produto</h2>
                     <form action="{% url 'cadastrarprodutos' %}" enctype="multipart/form-data" method="post">
                         {% csrf_token %}
@@ -39,5 +39,3 @@
 </body>
 
 {% endblock conteudo %}
-
-

@@ -4,10 +4,11 @@
 
 <div class="container mt-4">
     <div class="row">
-        <!-- Seção de pedidos dos usuários (esquerda) -->
-        <div class="col-md-6 mb-4">
-            <h2 class="table-title">Pedidos dos Usuários</h2>
-            <div class="bg-light p-4 rounded">
+        <!-- Seção de pedidos dos usuários e histórico de pedidos -->
+        <div class="col-md-12">
+            <!-- Tabela de pedidos dos usuários -->
+            <div class="bg-light p-4 rounded mb-5">
+                <h2 class="table-title border-bottom pb-2 mb-3">Pedidos dos Usuários</h2>
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover table-striped table-sm">
                         <thead class="thead-dark">
@@ -36,6 +37,7 @@
                                     <!-- Botões de ações -->
                                     <a class="btn btn-success btn-sm" href="{% url 'confirmar_compra' i.id %}">Confirmar</a>
                                     <a class="btn btn-warning btn-sm" href="{% url 'detalhar_pedido' i.id %}">Detalhar</a>
+                                    <a class="btn btn-danger btn-sm" href="{% url 'excluir_pedido' i.id %}" onclick="return confirm('Você tem certeza que deseja excluir este pedido?');">Excluir</a>
                                 </td>
                             </tr>
                             {% endfor %}
@@ -43,12 +45,10 @@
                     </table>
                 </div>
             </div>
-        </div>
 
-        <!-- Seção de histórico de pedidos (direita) -->
-        <div class="col-md-6 mb-4">
-            <h2 class="table-title">Histórico de Pedidos</h2>
+            <!-- Tabela de histórico de pedidos -->
             <div class="bg-light p-4 rounded">
+                <h2 class="table-title border-bottom pb-2 mb-3">Histórico de Pedidos</h2>
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover table-striped table-sm">
                         <thead class="thead-dark">
@@ -56,6 +56,7 @@
                                 <th>ID do Pedido</th>
                                 <th>Total</th>
                                 <th>Confirmado</th>
+                                <th>Ações</th> <!-- Adicionando coluna para ações -->
                             </tr>
                         </thead>
                         <tbody>
@@ -70,6 +71,13 @@
                                         <span class="badge bg-danger">Não</span>
                                     {% endif %}
                                 </td>
+                                <td>
+                                    <!-- Formulário para excluir pedido -->
+                                    <form action="{% url 'excluir_pedido' i.id %}" method="post" style="display:inline;">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Você tem certeza que deseja excluir este pedido?');">Excluir</button>
+                                    </form>
+                                </td>
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -81,12 +89,12 @@
 
     <!-- Seção de cadastro de produtos -->
     <div class="container text-center mt-5">
-        <div class="row justify-content-between">
-            <div class="col-md-5 mb-4">
-                <h2>Cadastrar Produto</h2>
-                <div class="bg-success p-4 rounded d-flex justify-content-center align-items-center">
-                    <a class="nav-link link-light" href="{% url 'cadastrarprodutos' %}">
-                        <span style="font-size: 50px;"><i class="bi bi-plus-circle-fill"></i></span>
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="bg-light p-4 rounded" style="border: 2px solid #d3d3d3;"> <!-- Adicionando borda cinza -->
+                    <h2 class="table-title border-bottom pb-2 mb-3">Cadastrar Produto</h2>
+                    <a href="{% url 'cadastrarprodutos' %}" class="btn btn-outline-success btn-lg d-flex align-items-center justify-content-center">
+                        <i class="bi bi-plus-circle" style="font-size: 24px; margin-right: 10px;"></i>
                     </a>
                 </div>
             </div>
@@ -95,5 +103,3 @@
 </div>
 
 {% endblock conteudo %}
-
-o nome do arquivo é superuser.html

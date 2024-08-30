@@ -45,22 +45,14 @@
                                         <td>{{ produto.nome }}</td>
                                         <td>R$ {{ produto.preco }}</td>
                                         <td>{{ produto.unidade_de_medida }}</td>
-                                        <td>
-                                            {% if user.is_authenticated %}
-                                            <!-- Botão Adicionar ao Carrinho -->
-                                            <a href="{% url 'adicionar_carrinho' produto.id %}" class="btn btn-success">Adicionar</a>
-                                        
+                                        <td>   
+
+                                            <a id="add-product" href="addcarrinho/{{ produto.id }}" class="btn btn-success ajax-link">Adicionar</a>
                                             <!-- Botão Detalhar -->
-                                            <a href="{% url 'detalhes_produto' produto.id %}" class="btn btn-info">Detalhar</a>
+                                            <a href="{% url 'editar_produto' produto.id %}" class="btn btn-info">Editar</a>
                                         
                                             <!-- Botão Excluir -->
-                                            <a href="{% url 'confirmar_exclusao' produto.id %}" class="btn btn-danger">Excluir</a>
-                                        {% else %}
-                                            <!-- Botão Adicionar ao Carrinho (Desativado) -->
-                                            <button class="btn btn-secondary" disabled>
-                                                <small><i class="fa-solid fa-lock"></i></small>
-                                            </button>
-                                        {% endif %}
+                                            <a href="{% url 'excluir_produto' produto.id %}" class="btn btn-danger">Excluir</a>
                                         
                                         </td>
                                     </tr>

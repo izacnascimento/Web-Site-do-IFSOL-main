@@ -398,3 +398,184 @@ h2 {
     align-items: center; /* Alinha verticalmente o ícone e o texto */
 }
 
+
+
+
+
+
+
+
+
+
+
+/* Estilo da tabela */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Estilo do cabeçalho da tabela */
+.table thead {
+    background-color: #5f925f;
+    color: white;
+}
+
+/* Estilo das linhas ímpares da tabela */
+.table tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+/* Estilo das linhas pares da tabela */
+.table tbody tr:nth-child(even) {
+    background-color: #d9ffd9; /* Tom claro de verde */
+}
+
+/* Estilo das imagens */
+.table img {
+    max-width: 100px;
+    height: auto;
+    border: 1px solid #5f925f;
+}
+
+
+
+
+/* Centralizar a seção de cadastro de produto */
+#produto-form {
+    max-width: 500px; /* Define a largura máxima */
+    background-color: #f0fff0; /* Verde claro */
+    color: #333; /* Cor do texto */
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* Estilo dos rótulos e botões */
+#produto-form .form-label {
+    color: #006400; /* Verde escuro */
+}
+
+#produto-form .form-control {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #ffffff; /* Branco */
+}
+
+#produto-form .btn-success {
+    background-color: #32cd32; /* Verde */
+    border-color: #32cd32;
+}
+
+#produto-form .btn-success:hover {
+    background-color: #228b22; /* Verde escuro ao passar o mouse */
+    border-color: #228b22;
+}
+
+/* Estilo do cabeçalho da seção */
+#produto-form h2 {
+    color: #006400; /* Verde escuro */
+    font-weight: bold;
+}
+
+/* Sombras e bordas arredondadas */
+#produto-form {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+
+
+/* Estilo geral das tabelas */
+.table-title {
+    color: #006400; /* Cor verde escuro para os títulos */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.table-bordered {
+    border: 2px solid #000; /* Borda preta ao redor das tabelas */
+}
+
+.table-bordered th, 
+.table-bordered td {
+    border: 1px solid #000; /* Bordas pretas entre as células */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f0fff0; /* Verde claro para linhas ímpares */
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #ffffff; /* Branco para linhas pares */
+}
+
+/* Estilo dos títulos das tabelas */
+.table-title.border-bottom {
+    border-bottom: 2px solid #000; /* Borda preta abaixo dos títulos */
+    padding-bottom: 10px;
+}
+
+/* Seção de cadastro de produtos */
+#produto-form {
+    max-width: 400px; /* Largura máxima para o formulário */
+    margin: 0 auto; /* Centraliza o formulário */
+    padding: 15px;
+    background-color: #32cd32; /* Verde mais claro para a seção */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#produto-form h2 {
+    color: #006400; /* Verde escuro */
+}
+
+#produto-form .btn-success {
+    background-color: #228b22; /* Verde escuro para o botão */
+    border-color: #228b22;
+}
+
+#produto-form .btn-success:hover {
+    background-color: #006400; /* Cor mais escura ao passar o mouse */
+    border-color: #006400;
+}
+
+.bg-success {
+    background-color: #32cd32 !important; /* Verde claro */
+    border-radius: 5px; /* Bordas arredondadas menores */
+    padding: 10px !important; /* Reduz o padding */
+}
+
+
+
+/* Adiciona uma borda ao redor da tabela e melhora o estilo geral */
+.table {
+    border-collapse: collapse; /* Garante que as bordas das células se fundam */
+    width: 100%; /* Faz a tabela usar toda a largura disponível */
+    margin: 0 auto; /* Centraliza a tabela */
+}
+
+.table th, .table td {
+    border: 1px solid #dee2e6; /* Borda cinza clara para células */
+    padding: 8px; /* Espaço interno das células */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.table thead th {
+    background-color: #343a40; /* Cor de fundo escura para o cabeçalho */
+    color: #ffffff; /* Cor do texto do cabeçalho */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f8f9fa; /* Cor de fundo alternada para linhas pares */
+}
+
+.table tbody tr:hover {
+    background-color: #e9ecef; /* Cor de fundo quando a linha é destacada */
+}
+
+.table-responsive {
+    overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+}
+

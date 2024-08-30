@@ -163,3 +163,15 @@ def confirmar_compra(request, carrinho_id):
     # Renderiza a página de confirmação
     return render(request, 'usuarios/confirmar_compra.html', {'carrinho': carrinho})
 
+
+def excluir_pedido(request, pedido_id):
+    pedido = get_object_or_404(Carrinho, id=pedido_id)
+    
+    if request.method == 'POST':
+        pedido.delete()
+        messages.success(request, 'Pedido excluído com sucesso!')
+        return redirect('controle')
+    
+    return render(request, 'usuarios/excluir_pedido.html', {'pedido': pedido})
+
+
