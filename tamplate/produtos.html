@@ -72,30 +72,28 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const ajaxLinks = document.querySelectorAll('.ajax-link');
-       
+            
             ajaxLinks.forEach(function(link) {
                 link.addEventListener('click', function(event) {
                     event.preventDefault();
-       
+                    
                     const url = this.getAttribute('href');
-                    console.log(url);
-       
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('GET', url, true);
-       
-                    xhr.onreadystatechange = function() {
-                        if (xhr.readyState === XMLHttpRequest.DONE) {
-                            if (xhr.status === 200) {
-                                console.log(xhr.responseText);
-                                // Atualize a página ou exiba uma mensagem de sucesso, se necessário
-                                location.reload();  // Atualiza a página para refletir a exclusão
-                            } else {
-                                console.error('Erro na requisição:', xhr.status);
-                            }
+                    
+                    fetch(url, {
+                        method: 'GET',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
                         }
-                    };
-       
-                    xhr.send();
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Atualiza a página ou mostra uma mensagem de sucesso
+                            window.location.href = "{% url 'logcarrinho' %}";  // Redireciona para a página de logcarrinho
+                        } else {
+                            console.error('Erro na requisição:', response.status);
+                        }
+                    })
+                    .catch(error => console.error('Erro na requisição:', error));
                 });
             });
         });

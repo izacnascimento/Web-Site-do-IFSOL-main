@@ -174,4 +174,6 @@ def excluir_pedido(request, pedido_id):
     
     return render(request, 'usuarios/excluir_pedido.html', {'pedido': pedido})
 
-
+def listar_produtos(request):
+    produtos = Produtos.objects.all()
+    return render(request, 'produtos.html', {'listagem_de_produtos': produtos})
