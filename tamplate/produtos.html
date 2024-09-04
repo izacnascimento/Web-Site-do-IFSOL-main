@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}  
+{% extends 'layout.html' %}
 {% load static %}
 {% block conteudo %}
 
@@ -46,14 +46,9 @@
                                         <td>R$ {{ produto.preco }}</td>
                                         <td>{{ produto.unidade_de_medida }}</td>
                                         <td>   
-
                                             <a id="add-product" href="addcarrinho/{{ produto.id }}" class="btn btn-success ajax-link">Adicionar</a>
-                                            <!-- Botão Detalhar -->
                                             <a href="{% url 'editar_produto' produto.id %}" class="btn btn-info">Editar</a>
-                                        
-                                            <!-- Botão Excluir -->
-                                            <a href="{% url 'excluir_produto' produto.id %}" class="btn btn-danger">Excluir</a>
-                                        
+                                            <button class="btn btn-danger" onclick="showDeleteModal('{{ produto.id }}')">Excluir</button>
                                         </td>
                                     </tr>
                                     {% endfor %}
@@ -69,7 +64,36 @@
         </div>
     </main>
 
+    <!-- Modal de Exclusão -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Excluir Produto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Tem certeza de que deseja excluir este produto? Esta ação não pode ser desfeita.
+                </div>
+                <div class="modal-footer">
+                    <form id="deleteForm" method="POST" action="">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Excluir</button>
+                        <a class="btn btn-secondary" href="{% url 'produtos' %}">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
+        function showDeleteModal(produtoId) {
+            const deleteForm = document.getElementById('deleteForm');
+            deleteForm.action = "{% url 'excluir_produto' 0 %}".slice(0, -2) + produtoId + "/";
+            const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+            deleteModal.show();
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             const ajaxLinks = document.querySelectorAll('.ajax-link');
             
@@ -100,4 +124,3 @@
     </script>
 
 {% endblock conteudo %}
-
